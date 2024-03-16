@@ -29,7 +29,10 @@ public class ResponseHeaderServlet extends HttpServlet {
 
         // Cookie 편의 메서드
         cookie(response);
-        
+
+        // Redirect 편의 메서드
+        redirect(response);
+
         PrintWriter writer = response.getWriter();
         writer.println("ok");
     }
@@ -45,5 +48,13 @@ public class ResponseHeaderServlet extends HttpServlet {
         Cookie cookie = new Cookie("myCookie", "good");
         cookie.setMaxAge(600);
         response.addCookie(cookie);
+    }
+
+    private void redirect(HttpServletResponse response) throws IOException {
+        // Status code 302
+        // Location: /basic/hello-form.html
+//        response.setStatus(HttpServletResponse.SC_FOUND); // 302
+//        response.setHeader("Location", "/basic/hello-form.html");
+        response.sendRedirect("/basic/hello-form.html");
     }
 }
