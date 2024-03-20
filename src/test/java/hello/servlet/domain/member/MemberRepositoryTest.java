@@ -20,7 +20,7 @@ class MemberRepositoryTest {
     void tearDown() {
         memberRepository.clearStore();
     }
-    
+
     @Test
     void save() {
         // given
