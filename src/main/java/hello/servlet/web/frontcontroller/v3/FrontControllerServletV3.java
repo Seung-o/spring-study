@@ -19,8 +19,7 @@ import java.util.Map;
 @WebServlet(name = "FrontControllerServletV3", urlPatterns = "/front-controller/v3/*")
 public class FrontControllerServletV3 extends HttpServlet {
 
-    @Serial
-    private static final long serialVersionUID = -4849238501611726706L;
+
     private final Map<String, ControllerV3> controllerV3Map = new HashMap<>();
 
 
